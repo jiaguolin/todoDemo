@@ -40,11 +40,11 @@ db.once('open', function callback () {
    console.log('Successfully mongodb is connected');
 });
 
-app.get('/employee',employeeRoute.index);
-app.get('/employee/:id',employeeRoute.findById);
-app.put('/employee/:id',employeeRoute.update);
-app.delete('/employee/:id',employeeRoute.delete)
-app.post('/employee',employeeRoute.newEmployee);
+app.get('/todo',employeeRoute.index);
+app.get('/todo/:id',employeeRoute.findById);
+app.put('/todo/:id',employeeRoute.update);
+app.delete('/todo/:id',employeeRoute.delete)
+app.post('/todo',employeeRoute.newEmployee);
 
 
 http.createServer(app).listen(app.get('port'), function(){
