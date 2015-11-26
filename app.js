@@ -40,20 +40,6 @@ db.once('open', function callback () {
    console.log('Successfully mongodb is connected');
 });
 
-
-
-var messagesSchema = mongoose.Schema({
-  name: String
-});
-
-var Messages = mongoose.model('Messages', messagesSchema);
-
-var silence = new Messages({ name: 'Hello, World' });
-    silence.save();
-});
-
-
-
 app.get('/employee',employeeRoute.index);
 app.get('/employee/:id',employeeRoute.findById);
 app.put('/employee/:id',employeeRoute.update);
