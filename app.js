@@ -42,6 +42,8 @@ db.once('open', function callback () {
 
 app.get('/query', function(req, res) {
   console.log("spitting out shit!");
+
+
 var messagesSchema = mongoose.Schema({
   name: String
 });
