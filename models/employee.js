@@ -10,7 +10,9 @@ var mongoose = require('mongoose'),
 
 var EmployeeSchema  = new Schema(
     {
-        name :{
+  name: String
+        
+        /*name :{
             first : String,
             last : String
         },
@@ -28,7 +30,7 @@ var EmployeeSchema  = new Schema(
                 pinCode : Number
             }
         }
-    }
+    }*/
 );
 
 mongoose.model('employees', EmployeeSchema);
