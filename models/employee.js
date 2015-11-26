@@ -11,7 +11,8 @@ var mongoose = require('mongoose'),
 var EmployeeSchema  = new Schema(
     {
   name: String
-        
+}
+
         /*name :{
             first : String,
             last : String
