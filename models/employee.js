@@ -11,27 +11,7 @@ var mongoose = require('mongoose'),
 var EmployeeSchema  = new Schema(
     {
   name: String
-}
-
-        /*name :{
-            first : String,
-            last : String
-        },
-        team : String,
-        skills :[String],
-        address : {
-            home : {
-                addressLine1 : String,
-                city : String,
-                pinCode : Number
-            },
-            office : {
-                addressLine1 : String,
-                city : String,
-                pinCode : Number
-            }
-        }
-    }*/
-);
+});
 
 mongoose.model('employees', EmployeeSchema);
+
