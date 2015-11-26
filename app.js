@@ -40,21 +40,6 @@ db.once('open', function callback () {
    console.log('Successfully mongodb is connected');
 });
 
-app.get('/query', function(req, res) {
-  console.log("spitting out shit!");
-
-
-var messagesSchema = mongoose.Schema({
-  name: String
-});
-
-var Messages = mongoose.model('Messages', messagesSchema);
-
-var silence = new Messages({ name: 'Hello, World' });
-    silence.save();
-});
-
-});
 
 app.get('/employee',employeeRoute.index);
 app.get('/employee/:id',employeeRoute.findById);
