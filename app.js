@@ -7,8 +7,8 @@ var express = require('express')
   , mongoose = require('mongoose')
   , http = require('http')
   , path = require('path')
-    , employeeModel = require('./models/employee')
-    ,employeeRoute = require('./routes/employee');
+    , todoModel = require('./models/employee')
+    ,todoRoute = require('./routes/employee');
 
 var app = express();
 
@@ -25,8 +25,6 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-// Here we find an appropriate database to connect to, defaulting to
-// localhost if we don't find one.
 var uriString =
     process.env.MONGOLAB_URI ||
         process.env.MONGOHQ_URL ||
@@ -40,11 +38,11 @@ db.once('open', function callback () {
    console.log('Successfully mongodb is connected');
 });
 
-app.get('/todo',employeeRoute.index);
-app.get('/todo/:id',employeeRoute.findById);
-app.put('/todo/:id',employeeRoute.update);
-app.delete('/todo/:id',employeeRoute.delete)
-app.post('/todo',employeeRoute.newEmployee);
+app.get('/todo',todoRoute.index);
+app.get('/todo/:id',todoRoute.findById);
+app.put('/todo/:id',todoRoute.update);
+app.delete('/todo/:id',todoRoute.delete)
+app.post('/todo',todoRoute.newTodo);
 
 
 http.createServer(app).listen(app.get('port'), function(){
