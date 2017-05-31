@@ -45,7 +45,7 @@ app.delete('/todo/:id',todoRoute.delete)
 app.post('/todo',todoRoute.newTodo);
 
 
-http.createServer(app).listen(3000,'10.0.0.106', function(){
+http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
 
